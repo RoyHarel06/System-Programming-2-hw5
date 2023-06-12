@@ -20,7 +20,7 @@ namespace ariel
         // Ascending order:
 
         auto it = lower_bound(ascending_order.begin(), ascending_order.end(), &(*element_itr),
-            [](const int *a, const int *b) {
+            [](const int *a, const int *b) -> bool {
                 return *a < *b;
             });
         ascending_order.insert(it, &(*element_itr));
@@ -43,7 +43,7 @@ namespace ariel
 
         if (isPrime(element)) {
             auto it = lower_bound(primes.begin(), primes.end(), &(*element_itr), 
-                [](const int *a, const int *b) {
+                [](const int *a, const int *b) -> bool {
                     return *a < *b;
                 });
             primes.insert(it, &(*element_itr));
