@@ -1,4 +1,7 @@
+#pragma once
+
 #include <vector>
+#include <set>
 
 using namespace std;
 
@@ -7,7 +10,7 @@ namespace ariel
 	class MagicalContainer
 	{
 		private:
-			vector<int> elements;
+			set<int> elements;
 			vector<const int*> ascending_order;
 			vector<const int*> primes;
 			vector<const int*> side_cross_order;
@@ -22,8 +25,8 @@ namespace ariel
 		class AscendingIterator
 		{
 			private:
-				MagicalContainer& container;
-				int index;
+				MagicalContainer* container;
+				size_t index;
 
 			public:
 				// Constructors:
@@ -56,8 +59,8 @@ namespace ariel
 		class SideCrossIterator
 		{
 			private:
-				MagicalContainer& container;
-				int index;
+				MagicalContainer* container;
+				size_t index;
 
 			public:
 				// Constructors:
@@ -90,8 +93,8 @@ namespace ariel
 		class PrimeIterator
 		{
 			private:
-				MagicalContainer& container;
-				int index;
+				MagicalContainer* container;
+				size_t index;
 
 			public:
 				// Constructors:
